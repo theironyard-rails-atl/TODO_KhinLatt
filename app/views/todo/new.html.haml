@@ -1,0 +1,7 @@
+%h1 Add new todo tasks
+
+= form_for @todo, :url => todo_index_path(@todo) do |f|
+  = f.label :name
+  = f.text_field :name
+  = f.hidden_field :done, :value => false
+  = f.submit "Add"

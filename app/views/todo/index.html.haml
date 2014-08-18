@@ -1,0 +1,17 @@
+%h1 To-Do Website
+
+%h2 To-Do:
+
+- @todos.each do |t|
+  %p
+    = t.name
+    %small= link_to "Mark as Done", todo_path(t), :method => :put
+
+%h2 Done:
+- @todone.each do |t|
+  %p
+    = t.name
+    %small= link_to "Remove", t, :confirm => "Are you sure?", :method => :delete
+
+
+%p= link_to "Add a to-do task", new_todo_path
